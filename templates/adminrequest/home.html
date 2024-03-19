@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'login/home.css' %}" type="text/css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="../">Profile</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="../dashboard/">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./">Request</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="../upload/">Upload</a>
+      </li>
+        </li>
+         <li class="nav-item">
+        <a class="nav-link" href="../return/">Return</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<table class="table">
+    <thead class = "thead-dark">
+        <tr>
+            <th>Request Id</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Available Qt.</th>
+            <th>Request Date</th>
+            <th>Employee Id</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for reqs in ite %}
+    <tr>
+        <td>{{ reqs.req.request_id }}</td>
+        <td>{{ reqs.req.item_name }}</td>
+        <td>{{ reqs.req.qty }}</td>
+        <td>{{ reqs.cou}}</td>
+        <td>{{ reqs.req.date }}</td>
+        <td>{{ reqs.req.emp_id }}</td>
+        <td>
+            <a href="approve/{{ reqs.req.request_id }}/"><span class="glyphicon glyphicon-pencil">Approve</span> </a>
+            <a href="delete/{{ reqs.req.request_id }}/">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

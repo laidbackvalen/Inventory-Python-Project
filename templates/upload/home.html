@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'login/home.css' %}" type="text/css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="../">Profile</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="../dashboard/">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../adminrequest/">Request</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="./">Upload</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="../return/">Return</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="card border-dark mb-3 " style="max-width: 400px; margin-top: 100px">
+    <div class="card-body">
+<form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control" id="Name" name="Name">
+  </div>
+    <div class="form-group">
+    <label for="Description">Description</label>
+    <input type="text" class="form-control" id="Description" name="Description">
+  </div>
+    <div class="form-group">
+    <label for="Type">Type</label>
+    <input type="text" class="form-control" id="Type" name="Type" required>
+  </div>
+    <div class="form-group">
+    <label for="id">ID</label>
+    <input type="text" class="form-control" id="id" name="id" required>
+  </div>
+    <div class="form-group">
+    <label for="Bond_Id">Bond Id</label>
+    <input type="text" class="form-control" id="Bond_Id" name="Bond_Id" required>
+  </div>
+    <div class="form-group">
+    <label for="Date_Of_Order">Date Of Order</label>
+    <input type="date" class="form-control" id="Date_Of_Order" name="Date_Of_Order">
+  </div>
+    <div class="form-group">
+    <label for="Vendor">Vendor</label>
+    <input type="text" class="form-control " id="Vendor" name="Vendor">
+  </div>
+    <div class="form-group">
+    <label for="Purchase_Price_Per_Item">Purchase Price Per Item</label>
+    <input type="number" class="form-control " id="Purchase_Price_Per_Item" name="Purchase_Price_Per_Item">
+  </div>
+    <div class="form-group">
+    <label for="Delivered_Date">Delivered Date</label>
+    <input type="date" class="form-control" id="Delivered_Date" name="Delivered_Date">
+  </div>
+    <div class="form-group">
+    <label for="Condition">Condition</label>
+    <input type="text" class="form-control" id="Condition" name="Condition">
+  </div>
+    <div class="form-group">
+    <label for="Quantity">Quantity</label>
+    <input type="number" class="form-control" id="Quantity" name="Quantity">
+  </div>
+    <div class="form-group">
+    <label for="Asset_Value">Asset Value</label>
+    <input type="number" class="form-control" id="Asset_Value" name="Asset_Value">
+  </div>
+    <div class="form-group">
+    <label for="Model">Model</label>
+    <input type="text" class="form-control" id="Model" name="Model">
+  </div>
+    <div class="form-group">
+    <label for="Vendor_No">Vendor No</label>
+    <input type="text" class="form-control" id="Vendor_No" name="Vendor_No">
+  </div>
+    <div class="form-group">
+    <label for="Remarks">Remarks</label>
+    <input type="text" class="form-control" id="Remarks" name="Remarks">
+  </div>
+    <div class="form-group">
+    <label for="Photograph">Photograph</label>
+    <input type="file" class="form-control" id="Photograph" name="Photograph">
+  </div>
+    <div class="form-group">
+    <label for="Date_Of_Upgrade">Date of Upgrade</label>
+    <input type="date" class="form-control" id="Date_Of_Upgrade" name="Date_Of_Upgrade">
+  </div>
+    <div class="form-group">
+    <label for="In_use">In use</label>
+    <input type="checkbox" class="form-control" id="In_use" name="In_use" value="True">
+  </div>
+    <div class="form-group">
+    <label for="Replacement_Required">Replacement Required</label>
+    <input type="checkbox" class="form-control" id="Replacement_Required" name="Replacement_Required" value="True">
+  </div>
+    <div class="form-group">
+    <label for="Location">Location</label>
+    <input type="text" class="form-control" id="Location" name="Location">
+  </div>
+    <div class="form-group">
+    <label for="To_be_Discarded">To be Discarded</label>
+    <input type="checkbox" class="form-control" id="To_be_Discarded" name="To_be_Discarded" value="True">
+  </div>
+    <div class="form-group">
+    <label for="Loaned">Loaned</label>
+    <input type="checkbox" class="form-control" id="Loaned" name="Loaned" value="True">
+  </div>
+    <button type="submit">Submit</button>
+</form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Approval</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'login/home.css' %}" type="text/css">
+</head>
+<body>
+<form method="POST" class="post-form" action="">
+    {% csrf_token %}
+    <div class="card border-dark mb-3 " style="max-width: 400px; margin-top: 100px">
+        <div class="card-header text-center"><h1>Enter Details</h1></div>
+        <div class="card-body text-dark">
+            <p class="card-text">
+            <label for="item_no">Item Unique Id:</label>
+    <input type="text" class="form-control" id="item_no" name="item_no">
+            <label for="date">Return Date:</label>
+    <input type="date" class="form-control" id="date" name="date">
+            <label for="request_id">Request Id:</label>
+    <input type="text" class="form-control" id="request_id" name="request_id" value="{{ id }}" readonly>
+            <label for="emp_id">Employee Id:</label>
+    <input type="text" class="form-control" id="emp_id" name="emp_id" value="{{ eid }}" readonly>
+            <center><button type="submit" class="btn btn-dark" >Submit</button></center>
+  </div>
+    </div>
+</form>
+</body>
+</html>

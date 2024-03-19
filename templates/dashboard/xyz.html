@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XYZ</title>
+</head>
+<body>
+<div class="collapse navbar-collapse">
+    <ul class="navbar-nav form-group">
+        <li class="nav-item dropdown">
+         <div style="width:350px">
+         <select name="id2" onkeyup="myFunction()">
+             <option value="*">--Select ID--</option>
+        {% for p in ids %}
+         <option value = "{{ p.id }}">{{ p.id }}</option>
+        {% endfor %}
+         </select>
+      </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    {% load static %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <form method="post" class="post-form" action="">
+          {% csrf_token %}
+            <div class="row">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav form-group">
+        <li class="nav-item dropdown">
+         <div style="width:350px">
+         <select name="name2">
+              <option value="*">--Select Name--</option>
+        {% for p in names %}
+             <option value = "{{ p.Name }}">{{ p.Name }}</option>
+        {% endfor %}
+         </select>
+      </div>
+      </li>
+    </ul>
+  </div>
+        <div class="collapse navbar-collapse">
+    <ul class="navbar-nav form-group">
+        <li class="nav-item dropdown">
+         <div style="width:350px">
+         <select name="type2">
+             <option value="*">--Select Type--</option>
+        {% for p in types %}
+         <option value = "{{ p.Type }}">{{ p.Type }}</option>
+        {% endfor %}
+         </select>
+      </div>
+      </li>
+    </ul>
+  </div>
+        <div class="collapse navbar-collapse">
+    <ul class="navbar-nav form-group">
+        <li class="nav-item dropdown">
+         <div style="width:350px">
+         <select name="id2">
+             <option value="*">--Select ID--</option>
+        {% for p in ids %}
+         <option value = "{{ p.id }}">{{ p.id }}</option>
+        {% endfor %}
+         </select>
+      </div>
+      </li>
+    </ul>
+  </div>
+        <div class="collapse navbar-collapse">
+    <ul class="navbar-nav form-group">
+        <li class="nav-item dropdown">
+         <div style="width:350px">
+         <select name="bond2">
+             <option value="*">--Select Bond Id--</option>
+        {% for p in bonds %}
+         <option value = "{{ p.Bond_Id }}">{{ p.Bond_Id }}</option>
+        {% endfor %}
+         </select>
+      </div>
+      </li>
+    </ul>
+  </div>
+
+    <input type="submit" class="btn btn-dark" value="Apply">
+            </div>
+        </form>
+</nav>
+    <a href="xyz/" class="btn btn-primary btn-lg" role="button" >Primary link</a>
+     <table class="table table-bordered table-hover ">
+    <thead class = "thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Id</th>
+            <th>Bond_Id</th>
+            <th>Date of Order</th>
+            <th>Vendor</th>
+            <th>Purchase price Per Item</th>
+            <th>Delivered Date</th>
+            <th>Condition</th>
+            <th>Quantity</th>
+            <th>Asset Value</th>
+            <th>Model</th>
+            <th>Vendor No</th>
+            <th>Remarks</th>
+            <th>Photograph</th>
+            <th>Date of Upgrade</th>
+            <th>In Use</th>
+            <th>Replacement Required</th>
+            <th>Location</th>
+            <th>To be Discarded</th>
+            <th>Loaned</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for p in itemss %}
+    <tr>
+        <td>{{ p.Name}}</td>
+            <td>{{ p.Description}}</td>
+            <td>{{p.Type}}</td>
+            <td>{{p.id}}</td>
+            <td>{{p.Bond_Id}}</td>
+            <td>{{p.Date_Of_Order}}</td>
+            <td>{{p.Vendor}}</td>
+            <td>{{p.Purchase_Price_Per_Item}}</td>
+            <td>{{p.Delivered_Date}}</td>
+            <td>{{p.Condition}}</td>
+            <td>{{p.Quantity}}</td>
+            <td>{{p.Asset_Value}}</td>
+            <td>{{p.Model}}</td>
+            <td>{{p.Vendor_No}}</td>
+            <td>{{p.Remarks}}</td>
+            <td>{{p.Photograph}}</td>
+            <td>{{p.Date_Of_Upgrade}}</td>
+            <td>{{p.In_use}}</td>
+            <td>{{p.Replacement_Required}}</td>
+            <td>{{p.Location}}</td>
+            <td>{{p.To_be_Discarded}}</td>
+            <td>{{p.Loaned}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
